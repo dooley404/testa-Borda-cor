@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div-rebolada {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        box-shadow: 1px 1px 15px black;
+        transition: border-radius 0.3s ease, backgroundColor 0.3s ease;
+
+
+      }
+      body {
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+  
+      }
+      input{
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.342);
+        border: none;
+        position: absolute;
+        bottom: 100px;
+        transition: 0.3ms ease-in-out;
+      }
+      input:focus{
+        outline: none;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div-rebolada"></div>
+    <p>Digite um valor de borda ou cor.</p>
+    <input id="inputDosDeuses" type="text" placeholder="Ex: 16px ou red" />
+    <script>
+      var input = document.querySelector("#inputDosDeuses");
+      var box = document.querySelector(".div-rebolada");
+
+      input.addEventListener("input", () => {
+        var valorInput = input.value;
+        box.style.borderRadius = valorInput;
+        box.style.backgroundColor = valorInput;
+      });
+    </script>
+  </body>
+</html>
